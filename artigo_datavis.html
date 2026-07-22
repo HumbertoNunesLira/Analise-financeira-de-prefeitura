@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Gastos da Prefeitura de Teixeira/PB (2014 a 2024): Limpeza de Dados e Indícios Estatísticos de Irregularidades</title>
+<style>
+  @page {
+    size: A4;
+    margin: 18mm 14mm 16mm 14mm;
+    @bottom-center {
+      content: counter(page);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 9pt;
+      color: #444;
+    }
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 10.3pt;
+    line-height: 1.42;
+    color: #111;
+    margin: 0;
+  }
+
+  a { color: #1a5cb0; text-decoration: none; }
+
+  /* ---------- cabeçalho ---------- */
+  .rule-top {
+    border: none;
+    border-top: 1.6pt solid #1a5cb0;
+    margin: 0 0 4mm 0;
+  }
+
+  .title {
+    font-size: 20pt;
+    font-weight: 700;
+    line-height: 1.15;
+    margin: 0 0 3mm 0;
+    color: #111;
+  }
+
+  .header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 2mm;
+  }
+
+  .author {
+    font-size: 12pt;
+    color: #1a5cb0;
+    font-weight: 600;
+  }
+  .author sup { font-size: 8pt; color: #1a5cb0; }
+
+  .affil-box {
+    text-align: right;
+    font-size: 8.3pt;
+    color: #333;
+    line-height: 1.35;
+  }
+  .affil-box .journal { font-style: italic; }
+
+  .rule-bottom {
+    border: none;
+    border-top: 0.8pt solid #1a5cb0;
+    margin: 3mm 0 4mm 0;
+  }
+
+  .date-line {
+    text-align: center;
+    font-size: 9.5pt;
+    color: #333;
+    margin-bottom: 6mm;
+  }
+
+  /* ---------- corpo em duas colunas ---------- */
+  .body-cols {
+    column-count: 2;
+    column-gap: 9mm;
+    text-align: justify;
+    hyphens: none;
+    -webkit-hyphens: none;
+  }
+
+  .dropcap:first-letter {
+    float: left;
+    font-size: 34pt;
+    line-height: 0.82;
+    font-weight: 700;
+    padding-right: 2pt;
+    padding-top: 1pt;
+  }
+
+  h2 {
+    font-size: 11.5pt;
+    font-weight: 700;
+    margin: 5mm 0 2mm 0;
+    break-after: avoid;
+    break-inside: avoid;
+  }
+  h3 {
+    font-size: 10.3pt;
+    font-weight: 700;
+    font-style: italic;
+    margin: 3.5mm 0 1.5mm 0;
+    break-after: avoid;
+  }
+
+  p { margin: 0 0 2.6mm 0; }
+
+  ul { margin: 0 0 2.6mm 4mm; padding: 0; }
+  li { margin-bottom: 1mm; }
+
+  code, .mono { font-family: "Consolas", monospace; font-size: 9.3pt; }
+
+  /* ---------- figuras ---------- */
+  figure {
+    margin: 3mm 0 4mm 0;
+    break-inside: avoid;
+  }
+  figure img {
+    width: 100%;
+    display: block;
+    border: 0.5pt solid #ddd;
+  }
+  figcaption {
+    font-size: 8.6pt;
+    color: #333;
+    margin-top: 1.5mm;
+    text-align: left;
+  }
+  figcaption b { font-weight: 700; }
+  figcaption i { font-style: italic; }
+
+  /* ---------- tabelas ---------- */
+  .tabela-wrap { margin: 3mm 0 5mm 0; break-inside: avoid; }
+  .tabela-cap {
+    font-size: 8.6pt;
+    color: #222;
+    margin-bottom: 1.5mm;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 8.8pt;
+  }
+  table th {
+    border-top: 1pt solid #111;
+    border-bottom: 0.6pt solid #111;
+    text-align: left;
+    padding: 1.3mm 1.5mm;
+    font-weight: 700;
+  }
+  table td {
+    padding: 1.1mm 1.5mm;
+    border-bottom: none;
+  }
+  table tr:last-child td { border-bottom: 1pt solid #111; }
+  table td.num, table th.num { text-align: right; }
+
+  .callout {
+    font-size: 9pt;
+    background: #f2f6fc;
+    border-left: 2.5pt solid #1a5cb0;
+    padding: 2mm 3mm;
+    margin: 2mm 0 3.5mm 0;
+    break-inside: avoid;
+  }
+
+  /* ---------- referências ---------- */
+  .refs h2 { break-before: column; }
+  .refs p {
+    font-size: 9pt;
+    padding-left: 5mm;
+    text-indent: -5mm;
+    margin-bottom: 2mm;
+  }
+</style>
+</head>
+<body>
+
+<hr class="rule-top">
+<div class="title">Gastos da Prefeitura de Teixeira/PB (2014 a 2024): Limpeza de Dados e Indícios Estatísticos de Irregularidades</div>
+
+<div class="header-row">
+  <div class="author">
+    Humberto Nunes<sup>1</sup>, André Maxwell <sup>1</sup>, Gustavo Afonso<sup>2</sup>
+</div>
+  <div class="affil-box">
+    Universidade Federal da Paraíba<br>
+    <span class="journal">Cadernos de Visualização de Dados</span><br>
+    <a href="#">cdia.ci.ufpb.br</a>
+  </div>
+</div>
+<hr class="rule-bottom">
+<div class="date-line">6 de julho de 2026</div>
+
+<div class="body-cols">
+
+<p class="dropcap">Este trabalho apresenta a limpeza, o tratamento e a visualização de onze anos (2014 a 2024) de despesas empenhadas, liquidadas e pagas pela Prefeitura Municipal de Teixeira (PB), a partir de dados públicos exportados do sistema contábil do município. O objetivo é duplo: (i) demonstrar boas práticas de tratamento de dados tabulares mal formados e de visualização, incluindo formas de representação, cor e composição; e (ii) levantar <b>indícios estatísticos</b> de padrões atípicos no gasto público que possam orientar auditorias mais aprofundadas. Nenhum achado aqui apresentado constitui prova de irregularidade; são sinais que, cruzados com os processos administrativos originais, podem justificar investigação adicional.</p>
+
+<h2>1. Fonte e tratamento dos dados</h2>
+
+<p>A base contém 86.895 registros brutos, um por empenho (<span class="mono">DL</span>), com colunas de identificação (fornecedor, CPF/CNPJ mascarado, histórico), classificação orçamentária (função, subfunção, elemento, fonte de recurso) e os valores fixado, empenhado, liquidado, pago, anulado e saldo, além das datas de empenho, pagamento e liquidação.</p>
+
+<p>O arquivo bruto apresentava dois problemas de qualidade que precisaram ser tratados antes de qualquer análise:</p>
+
+<ul>
+<li><b>Linhas partidas ao meio.</b> Cerca de 150 registros tinham uma quebra de linha literal dentro do campo de histórico, fazendo o exportador dividir um único empenho em duas linhas físicas do CSV, deslocadas 7 colunas entre si. Reconstruímos 130 desses registros automaticamente (realocando os valores para as colunas corretas) e descartamos 26 casos ambíguos, envolvendo mais de uma quebra encadeada.</li>
+<li><b>Coluna duplicada.</b> O cabeçalho trazia duas colunas chamadas "Data de Liquidação" (uma com espaço em branco no nome). Como nunca vinham preenchidas ao mesmo tempo, foram unificadas em um único campo.</li>
+</ul>
+
+<p>Em seguida, datas foram convertidas para o tipo <span class="mono">datetime</span> e valores monetários do formato brasileiro (<span class="mono">1.234,56</span>) para ponto flutuante. Campos de classificação no formato "código seguido de descrição" (função, elemento, categoria econômica) foram desmembrados e tiveram a caixa do texto normalizada, já que o sistema alterna entre <span class="mono">DESPESAS CORRENTES</span> e <span class="mono">Despesas Correntes</span> como se fossem categorias distintas.</p>
+
+<div class="tabela-wrap">
+<div class="tabela-cap"><b>Tabela 1:</b> <i>Visão geral do período após a limpeza.</i></div>
+<table>
+<tr><th>Indicador</th><th class="num">Valor</th></tr>
+<tr><td>Período coberto</td><td class="num">2014 a 2024</td></tr>
+<tr><td>Nº de empenhos</td><td class="num">86.739</td></tr>
+<tr><td>Total empenhado</td><td class="num">R$ 460,2 milhões</td></tr>
+<tr><td>Total pago</td><td class="num">R$ 429,0 milhões</td></tr>
+<tr><td>Execução geral (pago/empenhado)</td><td class="num">93,2%</td></tr>
+<tr><td>Fornecedores/beneficiários únicos</td><td class="num">7.568</td></tr>
+<tr><td>Ticket médio por empenho</td><td class="num">R$ 5.309,22</td></tr>
+<tr><td>Empenhos sem licitação</td><td class="num">82,5%</td></tr>
+</table>
+</div>
+
+<h2>2. Evolução temporal do gasto</h2>
+
+<p>A Figura 1 mostra os três estágios da despesa (empenhado, liquidado, pago) por ano, na mesma escala. O gasto empenhado saltou de R$ 25,5 milhões em 2014 para R$ 77,3 milhões em 2024 (ano ainda parcial, com dados até 22/11), um crescimento de quase 3&times; em onze anos, com aceleração visível a partir de 2021. As três curvas caminham coladas ao longo de todo o período, sinal de que a diferença entre "prometido" e "efetivamente pago" é historicamente pequena.</p>
+
+<figure>
+<img src="figuras/fig1_evolucao.png" alt="Evolução anual do gasto">
+<figcaption><b>Figura 1:</b> <i>Evolução anual do valor empenhado, liquidado e pago. Faixas cinza marcam anos de eleição municipal.</i></figcaption>
+</figure>
+
+<p>A Figura 2 decompõe o gasto empenhado em uma grade ano&times;mês. Dezembro concentra sistematicamente o maior volume de empenhos do ano (efeito típico de fechamento de exercício orçamentário), e a intensidade geral da cor cresce visivelmente da esquerda (2014) para a direita (2024), confirmando a tendência de alta observada na Figura 1.</p>
+
+<figure>
+<img src="figuras/fig2_sazonalidade.png" alt="Sazonalidade do gasto por mês e ano">
+<figcaption><b>Figura 2:</b> <i>Valor empenhado por mês e ano (heatmap sequencial, um único tom de azul: mais escuro = mais gasto).</i></figcaption>
+</figure>
+
+<h3>2.1 Ano eleitoral e despesas de capital</h3>
+
+<p>Separando o gasto em Despesas Correntes (folha, custeio) e Despesas de Capital (obras, equipamentos), a Figura 3 mostra que a fatia de capital tende a subir nos anos de eleição municipal: em média 12,8% do valor empenhado em 2016/2020/2024, contra 7,8% nos demais anos, consistente com a hipótese de "obras de vitrine" em ano eleitoral, embora 2024 tenha sido o ano eleitoral com menor pico dos três.</p>
+
+<figure>
+<img src="figuras/fig4_correntes_capital.png" alt="Despesas correntes vs capital por ano">
+<figcaption><b>Figura 3:</b> <i>Participação de despesas correntes e de capital no valor empenhado, por ano.</i></figcaption>
+</figure>
+
+<h2>3. Composição do orçamento</h2>
+
+<p>A Figura 4 lista as 12 funções de governo com maior valor empenhado no período (excluídas ~237 linhas com resíduo de corrupção no campo de função, não recuperável pelo reparo da Seção 1). Educação, Saúde e Administração somam 75% de todo o gasto por valor.</p>
+
+<figure>
+<img src="figuras/fig3_funcao.png" alt="Gasto por função de governo">
+<figcaption><b>Figura 4:</b> <i>Valor empenhado por função de governo, 2014 a 2024 (top 12).</i></figcaption>
+</figure>
+
+<div class="callout">Curiosidade: Assistência Social é a função com o 3º maior número de <i>lançamentos</i> (muitos auxílios de baixo valor unitário), mas cai para a 6ª posição quando o critério é valor total: "mais frequente" nem sempre é "mais caro".</div>
+
+<p>No nível mais granular do plano de contas (Figura 5), a folha de pessoal (vencimentos, contratações temporárias e encargos patronais, destacados em azul) responde sozinha por mais da metade do orçamento, à frente de compras e serviços de terceiros.</p>
+
+<figure>
+<img src="figuras/fig5_elementos.png" alt="Top 10 elementos de despesa">
+<figcaption><b>Figura 5:</b> <i>Top 10 elementos de despesa por valor empenhado (folha de pessoal em azul).</i></figcaption>
+</figure>
+
+<div class="tabela-wrap">
+<div class="tabela-cap"><b>Tabela 2:</b> <i>Três maiores funções por valor empenhado.</i></div>
+<table>
+<tr><th>Função</th><th class="num">Valor (R$ mi)</th></tr>
+<tr><td>Educação</td><td class="num">175,1</td></tr>
+<tr><td>Saúde</td><td class="num">127,9</td></tr>
+<tr><td>Administração</td><td class="num">43,6</td></tr>
+</table>
+</div>
+
+<h2>4. Fornecedores e concentração</h2>
+
+<p>Ao rankear os maiores recebedores de pagamentos, a própria "Prefeitura Municipal de Teixeira", o INSS e a Receita Federal aparecem no topo (Figura 6, painel esquerdo), mas representam transferências internas e retenções estatutárias, não fornecedores de mercado. Isolando apenas fornecedores externos (painel direito), o maior recebedor é um posto de combustíveis, seguido pela concessionária de energia e por empresas de construção civil.</p>
+
+<figure>
+<img src="figuras/fig6_fornecedores.png" alt="Maiores recebedores de pagamentos">
+<figcaption><b>Figura 6:</b> <i>Maiores recebedores de pagamentos, com e sem transferências internas.</i></figcaption>
+</figure>
+
+<p>A Figura 7 (curva de Pareto/Lorenz) mostra o quão concentrado é o gasto entre os 7.565 fornecedores externos identificados: apenas 1% deles concentra 57% de todo o valor pago, e 10% concentram 86%. Alta concentração de fornecedores não é, isoladamente, evidência de irregularidade: é esperada em qualquer economia com poucos grandes contratos (obras, combustível, energia), mas é o tipo de padrão que auditorias de gasto público monitoram de perto.</p>
+
+<figure>
+<img src="figuras/fig7_pareto.png" alt="Curva de concentração de fornecedores">
+<figcaption><b>Figura 7:</b> <i>Curva de concentração (Pareto/Lorenz) do valor pago a fornecedores externos.</i></figcaption>
+</figure>
+
+<h2>5. Execução orçamentária e distribuição dos valores</h2>
+
+<p>A execução orçamentária (% do empenhado que efetivamente foi pago) ficou entre 85% e 98% em todos os anos do período (Figura 8), sem sinal de deterioração: os valores mais baixos (2014 e 2024) correspondem ao primeiro ano da série e a um ano ainda em curso, respectivamente.</p>
+
+<figure>
+<img src="figuras/fig8_execucao.png" alt="Execução orçamentária por ano">
+<figcaption><b>Figura 8:</b> <i>Percentual pago do valor empenhado, por ano, com referência de 100%.</i></figcaption>
+</figure>
+
+<p>A distribuição dos valores por empenho (Figura 9, escala logarítmica) é fortemente assimétrica: metade dos empenhos vale menos de R$ 998 (reflexo dos milhares de auxílios sociais de baixo valor), enquanto uma cauda longa de contratos de obras e serviços chega a mais de R$ 900 mil.</p>
+
+<figure>
+<img src="figuras/fig9_distribuicao.png" alt="Distribuição dos valores empenhados">
+<figcaption><b>Figura 9:</b> <i>Histograma dos valores empenhados (escala log), com mediana destacada.</i></figcaption>
+</figure>
+
+<h2>6. Indícios de possíveis irregularidades</h2>
+
+<p>Esta seção aplica três testes estatísticos usados em auditoria e perícia contábil. Nenhum deles, isoladamente, comprova irregularidade: todos podem ter explicações legítimas, discutidas junto com cada achado.</p>
+
+<h3>6.1 Lei de Benford</h3>
+
+<p>Em conjuntos de números "naturais" que cobrem várias ordens de grandeza, o primeiro dígito significativo segue uma distribuição previsível (Benford, 1938): o dígito 1 aparece em ~30% dos casos, caindo até ~4,6% para o dígito 9. Fraudes e estimativas fabricadas "à mão" tendem a distribuir os dígitos de forma mais uniforme do que essa curva, motivo pelo qual grandes desvios são usados como sinal de alerta em auditoria (Nigrini, 2012). Na Figura 10, o dígito 1 aparece em 37% dos empenhos de Teixeira, acima do esperado, mas a explicação mais provável não é fraude: milhares de auxílios sociais de valor fixo e baixo (R$ 100, R$ 120, R$ 150...) começam todos em "1", inflando esse dígito mecanicamente.</p>
+
+<figure>
+<img src="figuras/fig10_benford.png" alt="Lei de Benford aplicada aos valores empenhados">
+<figcaption><b>Figura 10:</b> <i>Distribuição observada do primeiro dígito significativo vs. Lei de Benford.</i></figcaption>
+</figure>
+
+<h3>6.2 Ausência de licitação</h3>
+
+<p>82,5% dos empenhos do período não passaram por processo licitatório (esperado, já que grande parte do orçamento é folha de pagamento, benefícios e tributos, que não exigem licitação). O que importa é a tendência: a Figura 11 mostra que essa fatia oscilou entre 68% e 81% de 2014 a 2023, e recuou para 59% em 2024, o menor valor da série.</p>
+
+<figure>
+<img src="figuras/fig11_licitacao.png" alt="Participação de despesas sem licitação por ano">
+<figcaption><b>Figura 11:</b> <i>Participação do valor empenhado sem processo licitatório, por ano.</i></figcaption>
+</figure>
+
+<h3>6.3 Valores redondos e possível fracionamento</h3>
+
+<p>Valores exatamente redondos (múltiplos de R$ 100) são mais compatíveis com estimativas do que com medições reais. A proporção ficou estável entre 22% e 33% ao longo da série, exceto em <b>2021</b>, quando saltou para 42%, quase o dobro do padrão histórico (Figura 12): um desvio isolado, sem repetição nos anos vizinhos, que não tem explicação óbvia nos demais dados e merece checagem pontual.</p>
+
+<figure>
+<img src="figuras/fig12_redondos.png" alt="Proporção de valores redondos por ano">
+<figcaption><b>Figura 12:</b> <i>Proporção de empenhos com valor múltiplo de R$ 100, por ano.</i></figcaption>
+</figure>
+
+<p>Complementarmente, cruzamos "mesmo fornecedor + mesmo dia + múltiplos empenhos sem licitação" em categorias de compra/serviço (excluindo folha de pagamento e transferências internas): o teste clássico para identificar possível <i>fracionamento de despesa</i> (dividir uma compra grande em várias pequenas para evitar licitação). A maior parte dos casos encontrados envolve concessionária de energia, com contas separadas por unidade consumidora (um padrão legítimo), mas alguns envolvendo construtoras e fornecedores de material em datas muito próximas merecem checagem do processo administrativo correspondente.</p>
+
+<h2>7. Conclusão</h2>
+
+<p>O tratamento cuidadoso de um arquivo de origem com defeitos de exportação foi condição prévia para qualquer leitura confiável dos dados. Uma vez limpos, os dados de Teixeira/PB mostram um gasto público que quase triplicou em onze anos, fortemente concentrado em folha de pessoal, Educação e Saúde, com execução orçamentária estável e sem sinais de deterioração. Os testes de auditoria estatística (Benford, ausência de licitação, valores redondos, possível fracionamento) não comprovam irregularidade, mas apontam pontos concretos (em especial o pico de valores redondos em 2021 e a concentração de pagamentos a poucos fornecedores) que justificam checagem adicional nos processos administrativos originais.</p>
+
+<div class="refs">
+<h2>Referências</h2>
+
+<p>Benford, F. (1938). "The Law of Anomalous Numbers". Em: <i>Proceedings of the American Philosophical Society</i> 78.4, pp. 551 a 572.</p>
+
+<p>Nigrini, M. J. (2012). <i>Benford's Law: Applications for Forensic Accounting, Auditing, and Fraud Detection</i>. Hoboken: John Wiley &amp; Sons.</p>
+
+<p>Tribunal de Contas do Estado da Paraíba (TCE/PB). <i>Portal da Transparência: Prefeitura Municipal de Teixeira</i>. Dados de despesas empenhadas, liquidadas e pagas, 2014 a 2024.</p>
+
+<p>Universidade Federal da Paraíba, Departamento de Ciência da Computação. <i>Introdução à Visualização de Dados</i> (GDCOC0096), material da disciplina, Prof. Gustavo Oliveira. Disponível em: cdia.ci.ufpb.br.</p>
+
+</div>
+
+</div>
+</body>
+</html>

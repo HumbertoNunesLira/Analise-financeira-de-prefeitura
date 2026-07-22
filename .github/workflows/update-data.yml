@@ -1,0 +1,36 @@
+name: Atualizar dados de Teixeira/PB
+
+on:
+  schedule:
+    - cron: "0 7 * * *"  # 07:00 UTC ~= 04:00 em Brasília
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  atualizar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Instalar dependências
+        run: pip install -r requirements.txt
+
+      - name: Baixar dados do TCE-PB
+        run: python pipeline/fetch.py
+
+      - name: Limpar e transformar
+        run: python pipeline/transform.py
+
+      - name: Commit se houver dados novos
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add dados/
+          git diff --cached --quiet && echo "Sem mudanças nos dados." || git commit -m "Atualização automática dos dados (TCE-PB)"
+          git push
